@@ -12,7 +12,12 @@ PROPERTIES_FILE=/usr/local/tomcat/webapps/StudentBackend/WEB-INF/classes/applica
 
 # Replace frontend.url in application.properties
 if [ -f "$PROPERTIES_FILE" ]; then
+    echo "Updating frontend.url to ${FRONTEND_URL}..."
     sed -i "s|^frontend.url=.*|frontend.url=${FRONTEND_URL}|g" "$PROPERTIES_FILE"
+else
+    echo "Warning: $PROPERTIES_FILE not found!"
 fi
 
-# Start Tomcat
+# ✅ Start Tomcat and keep the container alive
+exec catalina.sh run
+
