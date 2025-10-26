@@ -14,11 +14,11 @@ import jakarta.annotation.PostConstruct;
 public class DemoApplication extends SpringBootServletInitializer {
 
 	@Value("${frontend.url}")
-	private String frontendUrl; // injected from properties
+	private String frontendUrl;
 
 	@PostConstruct
 	public void logFrontendUrl() {
-		System.out.println("Frontend URL = " + frontendUrl);
+		System.out.println("Frontend URL (for CORS) = " + frontendUrl);
 	}
 
 	@Override
