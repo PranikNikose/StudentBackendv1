@@ -16,4 +16,3 @@ if [ -f "$PROPERTIES_FILE" ]; then
 fi
 
 # Start Tomcat
-exec catalina.sh run
